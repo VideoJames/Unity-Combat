@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Damage
+public class Damage
 {
-    int BaseValue { get; }
-    int CurrentValue { get; }
-    void ApplyDamage(DamageReceiver damageReceiver);
-}
+    public float Value { get; set; }
 
-public interface DamageReceiver
-{
-    void ReceiveDamage(Damage damage);
-}
-
-public interface DamageMediator
-{
-
+    public Damage(float value)
+    {
+        Value = value;
+    }
 }
