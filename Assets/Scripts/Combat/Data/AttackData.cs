@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class AttackData : ScriptableObject
 {
     [SerializeField] List<StatModifier> damageModifiers;
@@ -9,18 +10,19 @@ public class AttackData : ScriptableObject
     {
         return new Attack(GetModifiedDamage(damageModifiers, attacker.GetDamage()));
     }
-
+    
+    // TODO: This method should be moved somewhere else as it is shared by Attack and Defend Data classes
+    // TODO: How can we nicely allow StatModifier to determine which stat to modify?
     public static List<Damage> GetModifiedDamage(List<StatModifier> damageModifierList, List<Damage> baseDamageList)
     {
         List<Damage> modifiedDamageList = new List<Damage>();
 
-        for (int i = 0; i < baseDamageList.Count; i++)
+        foreach (Damage baseDamage in baseDamageList)
         {
-            Damage baseDamage = baseDamageList[i];
-            modifiedDamageList.Add(new Damage(baseDamage.Value));
+            Damage modifiedDamge = new Damage(baseDamage.Value);
             foreach (StatModifier damageModifier in damageModifierList)
             {
-                modifiedDamageList[i].Value += damageModifier.GetStatModificationDelta(baseDamage.Value);
+                modifiedDamge.Value += damageModifier.GetStatModificationDelta(baseDamage.Value);
             }
         }
 

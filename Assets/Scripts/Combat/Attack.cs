@@ -2,6 +2,7 @@
 
 public class Attack
 {
+
     public List<Damage> PotentialDamage { get; private set; }
 
     public Attack (List<Damage> damage)
