@@ -6,9 +6,11 @@ public class AttackData : ScriptableObject
 {
     [SerializeField] List<StatModifier> damageModifiers;
 
-    public Attack CreateAttack(Attacker attacker)
+    public Attack CreateAttack(Attacker attacker, DamageMitigator defenses, AttackReceiver defender)
     {
-        return new Attack(GetModifiedDamage(damageModifiers, attacker.GetDamage()));
+        List<Damage> damageDealt = GetModifiedDamage(damageModifiers, attacker.GetDamage());
+        defenses.MitigateDamage(damageDealt);
+        return new Attack(damageDealt);
     }
     
     // TODO: This method should be moved somewhere else as it is shared by Attack and Defend Data classes

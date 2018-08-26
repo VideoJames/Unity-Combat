@@ -2,5 +2,5 @@
 
 public interface DamageMitigator
 {
-    void MitigateDamage(List<DamageData> damages);
+    void MitigateDamage(List<Damage> damages);
 }

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defender : MonoBehaviour, AttackReceiver, DamageMitigator
+public class Combatant : MonoBehaviour, DamageMitigator, AttackReceiver
 {
+    [SerializeField]
+    DefendData defenses;
+
     public void MitigateDamage(List<DamageData> damages)
     {
-        throw new System.NotImplementedException();
+        AttackData.GetModifiedDamage(defenses.)
     }
 
     public void ReceiveAttack(Attack attack)

@@ -6,4 +6,6 @@ using UnityEngine;
 public class DefendData : ScriptableObject
 {
     [SerializeField] List<StatModifier> damageModifiers;
+
+
 }
