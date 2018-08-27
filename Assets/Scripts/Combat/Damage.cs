@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage
+namespace Combat
 {
-    public float Value { get; set; }
-
-    public Damage(float value)
+    public class Damage
     {
-        Value = value;
+        public float Value;
+        public readonly bool IsCritical;    
+        
+        public Damage(float value, bool isCritical)
+        {
+            Value = value;
+            IsCritical = isCritical;
+        }
     }
 }

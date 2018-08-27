@@ -2,9 +2,8 @@
 
 namespace Combat
 {
-    public interface Attacker
+    public interface Defender
     {
-        List<Damage> GetDamage();
         List<StatModifier> GetDamageModifiers();
     }
 }

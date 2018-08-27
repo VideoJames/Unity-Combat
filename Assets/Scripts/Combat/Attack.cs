@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Attack
+namespace Combat
 {
-
-    public List<Damage> PotentialDamage { get; private set; }
-
-    public Attack (List<Damage> damage)
+    public class Attack
     {
-        PotentialDamage = damage;
+
     }
-} 
+}
