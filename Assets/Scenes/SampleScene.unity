@@ -147,7 +147,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a25ca27395ee494d93d1236c3934f4f, type: 2}
   buffs:
   - {fileID: 11400000, guid: dabb99a198c3beb4a8298ef589c9ecec, type: 2}
-  defenses: []
+  defenses:
+  - {fileID: 11400000, guid: 17832d8736756c54388fd81517c01ee1, type: 2}
 --- !u!65 &223290110
 BoxCollider:
   m_ObjectHideFlags: 0

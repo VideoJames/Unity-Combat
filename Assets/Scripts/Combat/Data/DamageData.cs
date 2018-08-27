@@ -11,7 +11,7 @@ namespace Combat
 
         public Damage GetDamage()
         {
-            return new Damage(1, true);
+            return new Damage(value, false);
         }
     }
 }

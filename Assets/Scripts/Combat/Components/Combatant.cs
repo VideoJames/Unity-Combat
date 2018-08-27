@@ -10,31 +10,16 @@ namespace Combat
         [SerializeField] List<StatModifier> buffs;
         [SerializeField] List<StatModifier> defenses;
 
-        void Awake()
-        {
-            Attack testAttack = new Attack(this, this);
-            testAttack.ProcessAttack();
-        }
-
         public List<Damage> GetDamage()
         {
             List<Damage> potentialDamages = GetDamageBaselines();
-            DamageModification.ModifyDamages(potentialDamages, buffs);
-            foreach(Damage damage in potentialDamages)
-            {
-                print(string.Format("Getting {0} damage", damage.Value));
-            }
-            
+            DamageModification.ModifyDamages(potentialDamages, buffs);           
             return potentialDamages;
         }
 
         public void ReceiveDamage(List<Damage> damages)
         {
-            DamageModification.ModifyDamages(damages, defenses);
-            foreach (Damage damage in damages)
-            {
-                print(string.Format("Received {0} damage", damage.Value));
-            }            
+            DamageModification.ModifyDamages(damages, defenses);    
         }
 
         /// <summary>
