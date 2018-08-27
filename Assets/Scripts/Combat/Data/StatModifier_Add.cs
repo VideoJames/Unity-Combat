@@ -2,12 +2,12 @@
 
 namespace Combat
 {
-    public class StatModifier_Add : ScriptableObject, StatModifier
+    [CreateAssetMenu]
+    public class StatModifier_Add : StatModifier
     {
-        [SerializeField] float added;
-        public float GetStatModificationDelta(float baseStatValue)
+        public override float GetStatModificationDelta(float baseStatValue)
         {
-            return baseStatValue + added;
+            return modificationValue;
         }
     }
 }

@@ -5,6 +5,5 @@ namespace Combat
     public interface Attacker
     {
         List<Damage> GetDamage();
-        List<StatModifier> GetDamageModifiers();
     }
 }

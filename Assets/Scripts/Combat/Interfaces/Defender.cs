@@ -4,6 +4,6 @@ namespace Combat
 {
     public interface Defender
     {
-        List<StatModifier> GetDamageModifiers();
+        void ReceiveDamage(List<Damage> damage);
     }
 }

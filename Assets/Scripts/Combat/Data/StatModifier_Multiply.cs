@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Combat
 {
-    public class StatModifier_Multiply : ScriptableObject, StatModifier
+    [CreateAssetMenu]
+    public class StatModifier_Multiply : StatModifier
     {
-        [SerializeField] float multiplier;
-        public float GetStatModificationDelta(float baseStatValue)
+        public override float GetStatModificationDelta(float baseStatValue)
         {
-            return baseStatValue * multiplier;
+            return baseStatValue * modificationValue - baseStatValue;
         }
     }
 }
