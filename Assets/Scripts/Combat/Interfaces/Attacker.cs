@@ -4,6 +4,6 @@ namespace Combat
 {
     public interface Attacker
     {
-        Damage GetDamage();
+        float GetDamage();
     }
 }

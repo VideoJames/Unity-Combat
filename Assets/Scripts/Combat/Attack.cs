@@ -14,8 +14,7 @@ namespace Combat
 
         public void ProcessAttack()
         {
-            Damage attackDamage = attacker.GetDamage();
-
+            float attackDamage = attacker.GetDamage();
             defender.ReceiveDamage(attackDamage);
         }
     }

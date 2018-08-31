@@ -8,37 +8,17 @@ namespace Combat
     {
         public event Action<float> OnReceievedDamage = delegate { };
 
-        Equipment equipment;
+        private CombatStats combatStats;
 
-        public Damage GetDamage()
+        public float GetDamage()
         {
-            Damage potentialDamage = equipment.Weapon.GetDamage();
-            DamageModification.ModifyDamage(potentialDamage, equipment.Armor);           
+            float potentialDamage = combatStats.GetDamage();
             return potentialDamage;
         }
 
-        public void ReceiveDamage(Damage damage)
+        public void ReceiveDamage(float damage)
         {
-            DamageModification.ModifyDamage(damage, equipment.Armor);
-            OnReceievedDamage(damage.Value);
+            OnReceievedDamage(damage);
         }      
-    }
-
-    public static class DamageModification
-    {
-        public static void ModifyDamage(Damage damageToModify, List<StatModifier> damageModifiers)
-        {
-            float damageBaselineValue = damageToModify.Value;
-            foreach (StatModifier damageModifier in damageModifiers)
-            {
-                damageToModify.Value += damageModifier.GetStatModificationDelta(damageBaselineValue);
-            }
-        }
-    }
-
-    public struct Equipment
-    {
-        public WeaponData Weapon;
-        public List<StatModifier> Armor;
     }
 }

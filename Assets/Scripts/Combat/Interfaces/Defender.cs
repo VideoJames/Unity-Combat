@@ -4,6 +4,6 @@ namespace Combat
 {
     public interface Defender
     {
-        void ReceiveDamage(Damage damage);
+        void ReceiveDamage(float damage);
     }
 }

@@ -7,6 +7,8 @@ namespace Combat
     [CreateAssetMenu]
     public class AttackData : MonoBehaviour
     {
+        [SerializeField] Damage damage;
 
+        // Animation details
     }
 }
