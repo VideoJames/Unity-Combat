@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 namespace Combat
 {
     public class Attack
     {
-        List<Damage> damage = new List<Damage>();
         Attacker attacker;
         Defender defender;
 
